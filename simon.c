@@ -1,3 +1,15 @@
+/**
+  ******************************************************************************
+  * @file    simon.c (Final Integrated System)
+  * @version V1.0.0
+  * @date    2026-01-16
+  * @brief   Main program body for the Simon Game Project.
+  * This file integrates the Input, Display, and RGB drivers into
+  * the final game logic state machine.
+  *
+  * @note    This is the FINAL RELEASE version for assignment submission.
+  ******************************************************************************
+  */
 #include "stm32f446xx.h"
 #include <stdlib.h>
 
@@ -387,3 +399,4 @@ void DMA1_Stream1_IRQHandler(void)
     }
 
 }
+
