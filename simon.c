@@ -7,7 +7,6 @@
 #define bright_max  30      
 #define bright_min  5       
 #define volume      300     
-
 #define SEG_S       0x6D 
 
 volatile uint32_t rgb_buffer[170]; 
@@ -16,16 +15,13 @@ const uint8_t SVN_SEG[10] = {
     0x3F, 0x06, 0x5B, 0x4F, 0x66, 
     0x6D, 0x7D, 0x07, 0x7F, 0x6F
 };
-
 const int LED_MAP[4] = {0, 1, 3, 4}; 
-
 const uint8_t GAME_COLORS[4][3] = {
     {bright_max, 0, 0},             
     {0, bright_max, 0},             
     {0, 0, bright_max},             
     {bright_max, bright_max, 0}     
 };
-
 const int SPEED_LEVELS[5] = {300, 250, 200, 120, 80};
 
 void initialize_GPIO(void);
@@ -41,7 +37,6 @@ void display_speed_menu(int speed_level);
 void delay_ms(int ms);
 int get_pressed_button_index(void);
 int check_specific_button(int index);
-
 void wait_and_config_speed(int *current_speed_idx); 
 
 int main(void)
@@ -390,4 +385,5 @@ void DMA1_Stream1_IRQHandler(void)
         TIM2->CR1 &= ~1;            
         TIM2->CCR3 = 0;             
     }
+
 }
