@@ -17,9 +17,7 @@ const uint8_t SVN_SEG[10] = {
 
 void init_display_gpio(void) {
     RCC->AHB1ENR |= (1<<2); 
-    
     GPIOC->MODER |= 0x55555555;
-    
     GPIOC->ODR = 0;
 }
 
@@ -27,8 +25,6 @@ void init_display_gpio(void) {
 void display_score(int score) {
     
     if(score > 99) score = 99;
-    
-    
     int tens = score / 10;
     int units = score % 10;
     
@@ -38,5 +34,5 @@ void display_score(int score) {
 
 void display_speed_menu(int level) {
     GPIOC->ODR = (SEG_S << 8) | SVN_SEG[level];
-
 }
+
