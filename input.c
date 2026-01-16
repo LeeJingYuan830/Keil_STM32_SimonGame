@@ -2,9 +2,7 @@
 
 void init_input_gpio(void)
 {
-    
     RCC->AHB1ENR |= (1<<0) | (1<<1); 
-    
     
     GPIOA->MODER &= ~((3<<(2*2)) | (3<<(3*2))); 
     GPIOA->PUPDR &= ~((3<<(2*2)) | (3<<(3*2)));
@@ -21,7 +19,6 @@ void init_input_gpio(void)
 
 void beep(int duration_ms) {
     int volume = 300; 
-
     for(int i=0; i<duration_ms; i++) {
         GPIOA->ODR |= (1<<10);
         for(volatile int j=0; j<volume; j++); 
@@ -45,3 +42,4 @@ int check_specific_button(int index) {
     else if(index == 3) return !(GPIOB->IDR & (1<<1)); 
     else return 0;
 }
+
