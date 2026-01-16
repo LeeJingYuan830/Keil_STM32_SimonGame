@@ -1,8 +1,16 @@
 #include "display.h"
 
 const uint8_t SVN_SEG[10] = {
-    0x3F, 0x06, 0x5B, 0x4F, 0x66, 
-    0x6D, 0x7D, 0x07, 0x7F, 0x6F
+    0x3F, //0
+    0x06, //1
+    0x5B, //2
+    0x4F, //3
+    0x66, //4
+    0x6D, //5
+    0x7D, //6
+    0x07, //7
+    0x7F, //8
+    0x6F  //9
 };
 
 #define SEG_S 0x6D 
@@ -30,4 +38,5 @@ void display_score(int score) {
 
 void display_speed_menu(int level) {
     GPIOC->ODR = (SEG_S << 8) | SVN_SEG[level];
+
 }
